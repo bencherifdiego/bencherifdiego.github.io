@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebSocket demo</title>
+    </head>
+    <body>
+        <p id="msg1">message</p>
+        <p id="msg2">message</p>
+        <p id="msg3">message</p>
+        <script>
+            var ws = new WebSocket("ws://127.0.0.1:1235/");
+            ws.onmessage = function (event) {
+                var 
+                    content = document.createTextNode(event.data),
+                    
+                    msg1 = document.getElementById('msg1');
+                    msg2 = document.getElementById('msg2');
+                    msg3 = document.getElementById('msg3');
+
+                if (content.substringData(0, 2) == '0 ')
+                {
+                    msg1.innerHTML = "";
+                    msg1.append(content.substringData(2, content.length - 2));
+                }
+                else if (content.substringData(0, 2) == '1 ')
+                {
+                    msg2.innerHTML = "";
+                    msg2.append(content.substringData(2, content.length - 2));
+                }
+                else if (content.substringData(0, 2) == '2 ')
+                {
+                    msg3.innerHTML = "";
+                    msg3.append(content.substringData(2, content.length - 2));
+                }
+            };
+        </script>
+    </body>
+</html>
