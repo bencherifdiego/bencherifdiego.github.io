@@ -18,7 +18,7 @@ def test():
         m = '0 ' + data['name'] + '|' + '1 ' + data['website'] + '|' + '2 ' + data['from'] + '|' + '9 ' + img
         yield from websocket.send(m)
 
-    time.sleep(0.2)
+    time.sleep(0.01)
 
 while True:
     asyncio.get_event_loop().run_until_complete(test())

@@ -1,1 +1,1 @@
-{"name": "Diego", "website": "mun.stream", "from": "kerbal"}
+{"name": "575754", "website": "45545", "from": "20"}

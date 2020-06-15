@@ -1,5 +1,6 @@
 import asyncio
 import websockets
+import time
 
 msg = "global"
 
@@ -17,6 +18,7 @@ async def test2(websocket, path):
         x = msg.split('|')
         for i in x:
             await websocket.send(i)
+            await asyncio.sleep(0.01)
         
 
 start_server = websockets.serve(test, "127.0.0.1", 1235)
