@@ -12,10 +12,14 @@ def test():
     with open('view1.png', "rb") as imageFile1:
         img = str(base64.b64encode(imageFile1.read()).decode())
 
+    conLines = open('console.txt', 'r').readlines()
+    con = ''
+    for line in conLines:
+        con = con + line + '/'
+
     with open('data.txt') as json_file:
         data = json.load(json_file)
-        m1 = data['name']
-        m = '0 ' + data['name'] + '|' + '1 ' + data['website'] + '|' + '2 ' + data['from'] + '|' + '9 ' + img
+        m = '0 ' + data['lat'] + '|' + '1 ' + data['long'] + '|' + '2 ' + data['alt'] + '|' + '8 ' + con + '|' + '9 ' + img
         yield from websocket.send(m)
 
     time.sleep(0.01)

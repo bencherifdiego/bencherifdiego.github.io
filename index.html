@@ -25,6 +25,8 @@
               dt = document.getElementById('dt'),
               temp = document.getElementById('temp');
               test = document.getElementById('test');
+              conn = document.getElementById('con');
+              connn = document.getElementById('console');
               image = document.getElementById('img');
           
           if (content.substringData(0, 2) == '0 ')
@@ -41,6 +43,18 @@
           {
               test.innerHTML = "altitude: ";
               test.append(content.substringData(2, content.length - 2));
+          }
+          else if (content.substringData(0, 2) == '8 ')
+          {
+              var con = content.substringData(2, content.length - 2).split('/');
+              conn.innerHTML = '';
+              for (el in con)
+              {
+                var li = document.createElement('li');
+                li.innerHTML = con[el];
+                conn.appendChild(li);
+              }
+              connn.scrollTop = connn.scrollHeight;
           }
           else if (content.substringData(0, 2) == '9 ')
           {
@@ -89,7 +103,7 @@
           <div class="col-12" style="height: 100%;"></div>
         </div>
         <div class="row" style="height: 40%;">
-          <div style="background-color: black; width: 100%;">
+          <div style="background-color: black; width: 95%; margin-left: auto; margin-right: auto;">
           <p id="dt" style="color:greenyellow; margin-left: 30px; margin-top: 20px;">latitude: </p>
           <p id="temp" style="color:greenyellow; margin-left: 30px; margin-top: 10px;">longitude: </p>
           <p id="test" style="color:greenyellow; margin-left: 30px; margin-top: 10px;">altitude: </p>
@@ -104,6 +118,12 @@
         </div>
         <div class="row" style="height: 10%;"></div>
         <div class="row" style="height: 40%;">
+          <div id="console" style="background-color: black; width: 95%; overflow-y: auto; height: 100%; margin-left: auto; margin-right: auto;">
+            <ul id="con" style="color: greenyellow; list-style: none;">
+              <li>test</li>
+            </ul>
+          </p>
+          </div>
         </div>
       </div>
       
