@@ -9,7 +9,7 @@
     <link type="text/css" rel="stylesheet" href='https://www.cyberbotics.com/wwi/R2020a/wwi.css' />
     <link type="text/css" rel="stylesheet" href='style.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src='https://code.jquery.com/jquery-3.1.1.min.js' integrity='sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=' crossorigin='anonymous'></script>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/E75D26F9-C92C-7C4C-B332-B5E135715871/main.js" charset="UTF-8"></script><script src='https://code.jquery.com/jquery-3.1.1.min.js' integrity='sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=' crossorigin='anonymous'></script>
     <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=' crossorigin='anonymous'></script>
     <script src='https://www.cyberbotics.com/jquery-ui-layout/1.4.4/jquery.layout.js'></script>
     <script src='https://www.cyberbotics.com/jquery-dialogextend/2.0.4/jquery.dialogextend.min.js'></script>
@@ -83,43 +83,38 @@
   </script>
   </head>
   <body onload="connect()">
+    <div class="container-fluid">
     <div style="padding-left:10px">
-      <h1>Webots streaming viewer</h1>
+      <h1>Telemetrie B-08</h1>
       <p>
-        Connect to:
         <input id="IPInput" type="text" value="localhost" />
-        :
         <input id="PortInput" type="text" value="1234" />
-        <input id="ConnectButton" type="button" value="Connect" onclick="connect()" />
+        <input id="ConnectButton" class="btn btn-primary" type="button" value="Connect" onclick="connect()" />
       </p>
     </div>
     <div class="row" style="height: 100%;">
       <div class="col-6">
-        <div class="row" style="height: 40%;" id="stream">
+        <div class="row streamview" style="height: 50%;" id="stream">
           <div id="playerDiv" class="col-12" style="height: 100%;">
           </div>
         </div>
-        <div class="row" style="height: 10%;">
-          <div class="col-12" style="height: 100%;"></div>
-        </div>
-        <div class="row" style="height: 40%;">
+        <div class="row" style="height: 45%;">
           <div style="background-color: black; width: 95%; margin-left: auto; margin-right: auto;">
-          <p id="dt" style="color:greenyellow; margin-left: 30px; margin-top: 20px;">latitude: </p>
-          <p id="temp" style="color:greenyellow; margin-left: 30px; margin-top: 10px;">longitude: </p>
-          <p id="test" style="color:greenyellow; margin-left: 30px; margin-top: 10px;">altitude: </p>
+          <p id="dt">latitude: </p>
+          <p id="temp">longitude: </p>
+          <p id="test">altitude: </p>
           </div>
         </div>
       </div>
       <div class="col-6">
-        <div class="row" style="height: 40%;" id="cam">
+        <div class="row robotcam" style="height: 50%;" id="cam">
           <div class="col-12" style="height: 100%;">
             <img id="img" src="" style="height: 100%; width: 100%;">
           </div>
         </div>
-        <div class="row" style="height: 10%;"></div>
-        <div class="row" style="height: 40%;">
-          <div id="console" style="background-color: black; width: 95%; overflow-y: auto; height: 100%; margin-left: auto; margin-right: auto;">
-            <ul id="con" style="color: greenyellow; list-style: none;">
+        <div class="row" style="height: 45%;">
+          <div id="console">
+            <ul id="con">
               <li>test</li>
             </ul>
           </p>
@@ -128,6 +123,6 @@
       </div>
       
     </div>
-    
+  </div>
   </body>
 </html>

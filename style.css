@@ -11,4 +11,48 @@ html {
     height: calc(100% - 150px);
     width: 100%;
   }
-  
+  .streamview, .robotcam{
+    margin: 0 0 5% 0;
+  }
+  #dt, #temp, #test{
+    color:greenyellow; 
+    /* margin-left: 30px; 
+    margin-top: 20px; */
+    margin: 20px 0 0 30px;
+    /* padding: 20px 0 0 30px; */
+  }
+  ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  ul#con{
+    margin: 20px 0 0 -10px;
+    color: greenyellow; 
+    list-style: none;
+  }
+  #console{
+    background-color: black; 
+    width: 95%; 
+    overflow-y: auto; 
+    height: 100%; 
+    margin-left: auto; 
+    margin-right: auto;
+  }
+  #toolBar {
+    display: none !important;
+  }
+
+  canvas {
+    height: 400px !important;
+}
+input#IPInput, input#PortInput{
+  display: none;
+}
+input#ConnectButton {
+  display: block;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  margin-top: 30px;
+}
